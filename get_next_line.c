@@ -6,7 +6,7 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 20:05:00 by ftudini           #+#    #+#             */
-/*   Updated: 2021/03/13 17:08:37 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/03/13 17:52:52 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void		store_line(char *str, char **line, size_t r)
 	size_t		i;
 	char		*tmp;
 	
+	if (r == 0)
+		*line = ft_strdup(str);
+	if (r < 0)
+		return (-1);
+	/*
 	i = 0;
 	while (str[i] != '\n' && str[i] != '\0')
 		i++;
@@ -25,7 +30,7 @@ void		store_line(char *str, char **line, size_t r)
 	printf("line : ", *line);
 	tmp = ft_substr(str, i + 1, ft_strlen(str) - ft_strlen(*line));
 	free(str);
-	str = tmp;
+	str = tmp; */
 }
 
 int		get_next_line(int fd, char **line)
