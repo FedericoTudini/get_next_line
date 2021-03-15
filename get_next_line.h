@@ -6,7 +6,7 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 18:58:00 by ftudini           #+#    #+#             */
-/*   Updated: 2021/03/08 18:05:58 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/03/15 12:30:08 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
+
+
+int		get_next_line(int fd, char **line);
 
 int		ft_strlen(const char *str)
 {
@@ -35,22 +38,31 @@ int		ft_strlen(const char *str)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*toreturn;
-	int		i;
-	int		j;
+	char			*str;
+	int				i;
+	int				j;
 
-	if (!s1 || !s2
-		|| !(toreturn = malloc(ft_strlen(s1) + 1 + ft_strlen(s2))))
-		return (NULL);
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
 	j = 0;
-	while (s1[i++])
-		toreturn[i - 1] = s1[i - 1];
-	while (s2[j++])
-		toreturn[i + j - 2] = s2[j - 1];
-	toreturn[i + j - 2] = 0;
-	return (toreturn);
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = 0;
+	return (str);
 }
+
 
 char	*ft_strdup(const char *src)
 {
@@ -68,7 +80,6 @@ char	*ft_strdup(const char *src)
 	dst[i] = 0;
 	return (dst);
 }
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -93,20 +104,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
+	unsigned char	u;
 
-	i = 0;
-	while (s[i])
+	u = (unsigned char)c;
+	while (*s || u == 0)
 	{
-		if ((char)c == *(char*)(s + i))
+		if (*s == u)
 		{
-			return ((char*)(s + i));
+			return (char*)s;
 		}
-		i++;
+		s++;
 	}
-	if ((char)c == s[i])
-		return ((char*)(s + i));
-	return (NULL);
+	return (0);
 }
 
 #endif
