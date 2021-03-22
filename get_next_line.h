@@ -6,13 +6,13 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 18:58:00 by ftudini           #+#    #+#             */
-/*   Updated: 2021/03/20 17:19:22 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/03/22 22:08:08 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 #define GET_NEXT_LINE_H
-#define BUFF_SIZE 4
+#define BUFF_SIZE 1
 
 # include <unistd.h>
 # include <fcntl.h>
