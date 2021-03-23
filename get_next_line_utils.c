@@ -6,7 +6,7 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 16:59:22 by ftudini           #+#    #+#             */
-/*   Updated: 2021/03/20 17:01:36 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/03/23 16:59:00 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = 0;
 	return (str);
 }
-
 
 char	*ft_strdup(const char *src)
 {
