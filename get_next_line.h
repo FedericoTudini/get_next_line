@@ -6,7 +6,7 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 18:58:00 by ftudini           #+#    #+#             */
-/*   Updated: 2021/03/23 16:56:47 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/05/06 18:01:12 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
 # include <stdlib.h>
 
 int		get_next_line(int fd, char **line);
+char	*ft_realloc(char **line, int flag);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 int		ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *src);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strchr(const char *s, int c);
+int		ft_check(char **line);
+int		ft_allocate(char **line, char *buff);
 
 #endif
